@@ -1,0 +1,15 @@
+<h2>Editing Book</h2>
+<%= form_for(@book, url: book_path(@book.id), html: {method: "put"}) do |f| %>
+	<%= render 'layouts/error_messages', model: f.object %>
+	
+    <p>Title</p>
+    <%= f.text_field :title %>
+ 
+    <p>Body</p>
+    <%= f.text_area :body %><br>
+
+    <%= f.submit 'Update Book' %>
+ 
+<% end %>
+<%= link_to "Show",book_path(@book.id)%>
+<%= link_to "Back", books_path %>
